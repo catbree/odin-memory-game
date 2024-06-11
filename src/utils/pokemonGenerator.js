@@ -13,7 +13,7 @@ class PokemonArray {
 
 const pokemonArray = new PokemonArray();
 
-const pokemonGenerator = async () => {
+export default async function pokemonGenerator() {
   const apiBase = "https://pokeapi.co/api/v2/pokemon/";
 
   while (pokemonArray.pokemon.length < 20) {
@@ -27,7 +27,7 @@ const pokemonGenerator = async () => {
 
       const pokemonData = await response.json();
       let pokemonName = pokemonData.species.name;
-      let pokemonImageUrl = pokemonData.sprites.back_default;
+      let pokemonImageUrl = pokemonData.sprites.front_default;
 
       //checks if pokemon is already in array
       if (
@@ -41,8 +41,6 @@ const pokemonGenerator = async () => {
   }
 
   return pokemonArray;
-};
+}
 
 const getRandomFirstGenPokemonId = () => Math.ceil(Math.random() * 151); // There are 151 pokemon in first generation.
-
-export default pokemonGenerator;
