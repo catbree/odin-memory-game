@@ -2,6 +2,7 @@ class Pokemon {
   constructor(name, imageUrl) {
     this.name = name;
     this.imageUrl = imageUrl;
+    this.isCaught = false;
   }
 }
 
@@ -11,9 +12,10 @@ class PokemonArray {
   }
 }
 
-const pokemonArray = new PokemonArray();
 
-export default async function pokemonGenerator() {
+export async function pokemonGenerator() {
+  const pokemonArray = new PokemonArray();
+
   const apiBase = "https://pokeapi.co/api/v2/pokemon/";
 
   while (pokemonArray.pokemon.length < 20) {
@@ -39,7 +41,7 @@ export default async function pokemonGenerator() {
       console.log(error);
     }
   }
-
+  console.log("Pokémon data fetched:", pokemonArray);
   return pokemonArray;
 }
 
