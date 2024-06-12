@@ -31,11 +31,10 @@ PokeAPI serves 20 unique pokemons at the start of every game.
 
 High score is not stored in memory. Upon leaving or refreshing page, high score will be lost.
 
-
-# Testing sample
-kabutops, magmar, rhydon, mewtwo, zubat, wartotle, voltorb, nidoqueen, ekans, cloyster, jolteon, dratini, magneton, jynx, blastoise, gloom, eevee, beedrill, bellsprout, machamp
-
 # Next Steps
-- Fix bug: If you correctly guess all 20, you technically "win" and there's no win condition currently to account for that.
-- Style it nicely!
-- Give the option to make it more difficult by removing names, and showing the back sprints, which I find quite funny haha
+- Implement win condition: Currently, there's no indication of winning when all 20 guesses are correct.
+- Add styling.
+- Add difficulty levels: Provide options to increase difficulty by removing names and showing back sprites.
+- Address API call issues: Fix bug causing double loading on restart and ensure proper refreshing of Pokémon sets.
+- Optimize API performance: Investigate ways to speed up API calls to reduce initial load times.
+- Add loading screen: Consider implementing a loading screen during Pokémon set refresh to improve user experience.
